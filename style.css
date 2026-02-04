@@ -1,0 +1,875 @@
+/* --- CSS Reset & Biến Màu Sắc --- */
+:root {
+    --primary-color: #FFFFFF; 
+    --secondary-color: #000000;
+    --light-text-color: #B0B0B0;
+    --dark-gray-bg: #1A1A1A;
+    --border-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+/* --- CSS Chung --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+section {
+    padding: 100px 0;
+    position: relative;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+/* --- (ĐÃ THÊM) Styles for Product Listing Page --- */
+
+/* Tiêu đề trang */
+.page-header {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    margin-top: 80px; /* Bù cho header fixed */
+    text-align: center;
+}
+
+.page-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.page-header h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 4rem;
+    letter-spacing: 3px;
+}
+
+/* Mô tả công việc */
+.work-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+}
+
+/* Menu lọc */
+.filter-btn {
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 5px 15px; /* Thêm margin top/bottom cho mobile */
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--primary-color);
+}
+
+.filter-btn.active::after {
+    width: 100%;
+}
+
+/* Animation cho portfolio item khi lọc */
+.portfolio-item.hide {
+    transform: scale(0.8);
+    opacity: 0;
+    display: none;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: transparent;
+    color: var(--primary-color);
+    text-decoration: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    border-color: var(--primary-color);
+}
+
+/* Hiệu ứng fill màu cho nút */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background: transparent;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.4s ease, border-bottom 0.4s ease;
+}
+/* (CODE MỚI) Header cho trang con */
+.header.header-solid {
+    background: rgba(0, 0, 0, 0.85); /* Màu nền bán trong suốt */
+    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ hiện đại */
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem; /* (ĐÃ SỬA) Tăng kích thước chữ cho menu */
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.hero-slideshow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.hero-slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    padding: 0 20px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+}
+
+.hero-slide.active .hero-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: var(--light-text-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 15;
+}
+.hero-nav button {
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.hero-nav button:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* --- About/Intro Section --- */
+#intro {
+    background: var(--dark-gray-bg);
+    text-align: center;
+}
+#intro p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: var(--light-text-color);
+}
+
+/* --- Portfolio Section --- */
+#portfolio, #all-products {
+    background: var(--secondary-color);
+}
+
+#all-products {
+    padding-top: 0;
+}
+
+/* (ĐÃ SỬA) Bỏ grid layout vì đã dùng Bootstrap */
+.portfolio-grid {
+    margin-top: 50px;
+}
+.portfolio-item-link {
+    text-decoration: none;
+    display: block; 
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 280px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    background-color: var(--dark-gray-bg); /* Giữ chỗ khi ảnh chưa tải */
+}
+.portfolio-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+.portfolio-item-link:hover .portfolio-item::after {
+    opacity: 1; 
+}
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+.portfolio-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    
+    /* Hiệu ứng ẩn/hiện */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 2;
+}
+.portfolio-item-link:hover .portfolio-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.portfolio-overlay p {
+    color: var(--light-text-color);
+    font-size: 1.1rem;
+}
+
+/* (CODE MỚI) Style cho nút Xem thêm */
+.portfolio-cta {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* --- Partners Section --- */
+#partners {
+    background: var(--dark-gray-bg);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    
+    /* (CODE MỚI) Giới hạn chiều rộng và căn giữa */
+    max-width: 1000px; /* Chiều rộng tối đa của cả khối logo */
+    margin: 50px auto 0; /* Căn giữa khối logo */
+
+    justify-items: center;
+    align-items: center;
+}
+
+.partner-logo {
+    padding: 25px; /* Tăng padding một chút */
+    background: #fff;
+    border-radius: 8px; /* Bo góc nhiều hơn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px; /* Tăng chiều cao của ô chứa */
+    width: 100%;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: grayscale(0%); /* Hiển thị màu gốc */
+    opacity: 1;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    filter: grayscale(0%); /* Hiện màu khi hover */
+    opacity: 1;
+}
+
+.partner-logo img {
+    max-width: 150px; /* Tăng chiều rộng tối đa */
+    max-height: 80px; /* Tăng chiều cao tối đa */
+    object-fit: contain; /* Đảm bảo logo không bị méo */
+}
+
+/* --- Call to Action Section --- */
+#cta {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1500x500.png?text=CICI+Media+CTA+Background') no-repeat center center/cover;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 120px 0;
+}
+
+#cta h2 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+#cta h2::after {
+    display: none;
+}
+
+#cta p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    color: var(--light-text-color);
+}
+
+/* --- (ĐÃ THÊM) Stats Counter Section --- */
+#stats {
+    background-color: var(--secondary-color);
+    padding: 80px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat-item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+/* (ĐÃ SỬA) Thêm icon nền mờ cho các cột thống kê */
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+/* Icon cuộn phim cho cột "Đối Tác" */
+.stat-item:first-child::before {
+    background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 2H4c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 4h2v2H4V4zm0 4h2v2H4V8zm0 4h2v2H4v-2zm0 4h2v2H4v-2zm14 4h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V4h2v2z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Icon máy quay cho cột "Dự Án" */
+.stat-item:last-child::before {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg fill='%23fff' width='800px' height='800px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 11c0-.959-.68-1.761-1.581-1.954C16.779 8.445 17 7.75 17 7c0-2.206-1.794-4-4-4-1.516 0-2.822.857-3.5 2.104C8.822 3.857 7.516 3 6 3 3.794 3 2 4.794 2 7c0 .902.312 1.726.817 2.396A1.993 1.993 0 0 0 2 11v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-2.637l4 2v-7l-4 2V11zm-5-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zM6 5c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z'/%3E%3C/svg%3E");
+}
+
+.stat-number, .stat-label {
+    position: relative;
+    z-index: 1;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    font-family: 'Oswald', sans-serif;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: var(--light-text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- (ĐÃ SỬA) Footer tối giản --- */
+.footer {
+    background: var(--secondary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 40px 0 20px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer .social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    margin: 0 15px;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--light-text-color);
+    transform: translateY(-3px);
+}
+.footer-bottom {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* (CODE MỚI) Style cho trang con */
+.page-header {
+    background: var(--dark-gray-bg);
+    text-align: center;
+    padding: 120px 0 100px 0;
+    margin-top: 80px; /* Bù cho header fixed */
+}
+.page-header h1 {
+    font-size: 3.5rem;
+}
+.page-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* (ĐÃ SỬA) Thêm overlay cho page-header chung */
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--light-text-color);
+}
+
+/* (ĐÃ SỬA) Căn giữa menu filter và cho phép xuống dòng */
+.filter-menu {
+    text-align: center; /* Luôn căn giữa các nút */
+    margin-bottom: 40px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.5rem; }
+    .hero { height: 80vh; }
+    .partners-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+    
+    .menu-toggle { display: block; }
+    .nav-links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--secondary-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+    .nav-links li { margin: 20px 0; }
+    .nav-links a { font-size: 1.5rem; }
+
+}
+
+@media (max-width: 768px) {
+    section { padding: 80px 0; }
+    .container { padding: 0 20px; }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.1rem; }
+    #cta h2 { font-size: 2.2rem; }
+    .btn { padding: 12px 28px; font-size: 0.9rem; }
+    .partners-grid { grid-template-columns: 1fr; }
+
+    /* (ĐÃ SỬA) Chỉnh lỗi mũi tên đè chữ */
+    .hero-nav {
+        top: auto; /* Bỏ vị trí top: 50% */
+        bottom: 15%; /* Đưa mũi tên xuống thấp */
+        transform: translateY(0);
+        padding: 0 15px; /* Giảm padding */
+    }
+    .hero-nav button {
+        padding: 10px 8px;
+        font-size: 1.5rem;
+    }
+
+    .page-header { padding: 100px 0 80px 0; }
+    .page-header h1 { font-size: 2.5rem; }
+}
+
+@media (max-width: 576px) {
+    .stat-number { font-size: 3rem; }
+    .stat-label { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    .logo { font-size: 1.5rem; }
+
+    .hero-nav button {
+        padding: 8px 6px;
+        font-size: 1.2rem;
+    }
+}
+
+/* --- Contact Page --- */
+#contact-form-section {
+    padding: 100px 0;
+    background: var(--dark-gray-bg);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.contact-info h3, .contact-form h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+}
+
+.contact-info p i {
+    margin-right: 15px;
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+}
+
+.social-links-contact {
+    margin-top: 30px;
+}
+
+.social-links-contact a {
+    color: var(--primary-color);
+    margin-right: 20px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links-contact a:hover {
+    color: var(--light-text-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contact-form .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Popup --- */
+.popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.popup-content {
+    background-color: var(--dark-gray-bg);
+    margin: 15% auto;
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+.close-popup-btn {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-popup-btn:hover,
+.close-popup-btn:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
