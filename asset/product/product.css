@@ -1,0 +1,147 @@
+/* --- Styles for Product Listing Page --- */
+
+/* Tiêu đề trang */
+.page-header {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    margin-top: 80px; /* Bù cho header fixed */
+    text-align: center;
+}
+
+.page-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.page-header h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 4rem;
+    letter-spacing: 3px;
+}
+
+/* Mô tả công việc */
+.work-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+}
+
+/* Menu lọc */
+.filter-menu {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 5px 15px; /* Thêm margin top/bottom cho mobile */
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--primary-color);
+}
+
+.filter-btn.active::after {
+    width: 100%;
+}
+
+/* --- Portfolio Grid & Items --- */
+
+.portfolio-item-link {
+    text-decoration: none;
+    display: block; 
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    border-radius: 8px; /* Thêm bo góc */
+}
+
+/* Animation cho portfolio item khi lọc */
+.portfolio-item.hide {
+    transform: scale(0.8);
+    opacity: 0;
+    display: none;
+}
+
+/* Lớp phủ màu đen mờ khi hover */
+.portfolio-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.portfolio-item-link:hover .portfolio-item::after {
+    opacity: 1;
+}
+
+/* Style cho tên dự án */
+.portfolio-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    
+    /* Hiệu ứng ẩn/hiện */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 2;
+}
+
+/* Hiện tên dự án khi hover */
+.portfolio-item-link:hover .portfolio-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Thêm hiệu ứng zoom nhẹ cho ảnh khi hover */
+.portfolio-item-link:hover .portfolio-item img {
+    transform: scale(1.05);
+}
