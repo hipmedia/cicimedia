@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cici Media </title>
+    <link rel="icon" href="asset/img/photo-cover/logo-cici.png" type="image/png">
+    <!-- (ĐÃ THÊM) Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="container navbar">
+            <a href="index.html" class="logo">Cici Media</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="asset/product/product.html">Dự Án</a></li>
+                <li><a href="index.html#partners">Đối Tác</a></li>
+                <li><a href="asset/contact/contact.html">Liên Hệ</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main>
+                <section id="hero" class="hero">
+            <div class="hero-slideshow">
+                <div class="hero-slide active" style="background-image: url('asset/product/project/vinfast-tuyen-quang/anh1.jpg');">
+                    <div class="hero-content">
+                        <h1>KIẾN TẠO CẢM XÚC, GHI DẤU THƯƠNG HIỆU</h1>
+                        <p>Chúng tôi biến ý tưởng của bạn thành những thước phim quảng cáo ấn tượng, chạm đến trái tim khách hàng.</p>
+                        <a href="asset/product/product.html" class="btn">XEM DỰ ÁN</a>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('asset/img/photo-cover/photo-cover-1.jpg');">
+                    <div class="hero-content">
+                        <h1>LƯU GIỮ KHOẢNH KHẮC, KỂ CHUYỆN TÌNH YÊU</h1>
+                        <p>Ghi lại những khoảnh khắc ngọt ngào và chân thật nhất trong ngày trọng đại của bạn qua những thước phim và hình ảnh đầy cảm xúc.</p>
+                        <a href="asset/product/product.html" class="btn">XEM DỰ ÁN</a>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('asset/img/photo-cover/bia.jpg');">
+                    <div class="hero-content">
+                        <h1>BÙNG NỔ SỰ KIỆN, LAN TỎA THÔNG ĐIỆP</h1>
+                        <p>Từ hội nghị, lễ ra mắt đến các sự kiện văn hóa, chúng tôi đảm bảo mọi khoảnh khắc đều được ghi lại một cách chuyên nghiệp và sống động.</p>
+                        <a href="asset/product/product.html" class="btn">XEM DỰ ÁN</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-nav">
+                <button id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+                <button id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section id="intro">
+            <div class="container">
+                <h2>CICI Media</h2>
+                <p>Với nhiều năm kinh nghiệm, chúng tôi tự hào là đối tác đáng tin cậy của nhiều thương hiệu, mang lại giá trị cao nhất cho khách hàng.</p>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+                <h2>Product</h2>
+                <!-- (ĐÃ SỬA) Áp dụng lưới Bootstrap để cân đối layout -->
+                <div class="row g-4 portfolio-grid">
+                    <div class="col-lg-4 col-md-6">
+                        <a href="asset/product/project/vinfast-tuyen-quang.html" class="portfolio-item-link">
+                            <div class="portfolio-item">
+                                <img src="./asset/product/project/vinfast-tuyen-quang/anh1.jpg" alt="Dự án TVC">
+                                <h3 class="portfolio-title">Vinfast ngày hội thu xăng đổi điện</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a href="asset/product/project/viettel-2025.html" class="portfolio-item-link">
+                            <div class="portfolio-item">
+                                <img src="./asset/product/project/viettel-2025/anh1.jpg" alt="Larasa Viet Nam">
+                                <h3 class="portfolio-title">VIETTEL Tuyên Quang - Tết Vẹn Toàn Ngày Hội Gia Đình Xuân Bính Ngọ 2026</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a href="asset/product/project/mv-cover-anh-say-roi.html" class="portfolio-item-link">
+                            <div class="portfolio-item">
+                                <img src="./asset/product/project/anh-say-roi/thumbnail.jpeg" alt="Larasa Viet Nam">
+                                <h3 class="portfolio-title">MV Cover Anh Say Rồi</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a href="asset/product/project/le-ra-mat-thuong-hieu-larasa.html" class="portfolio-item-link">
+                            <div class="portfolio-item">
+                                <img src="./asset/product/project/project-le-ra-mat-larasa/anh1.jpg" alt="Larasa Viet Nam">
+                                <h3 class="portfolio-title">Sự Kiện Ra Mắt Thương Hiệu Larasa</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a href="asset/product/project/uncle-thai-honey-pickerball.html" class="portfolio-item-link">
+                            <div class="portfolio-item">
+                                <img src="./asset/product/project/image-project-1/AT000690.JPG" alt="Uncle Thái Honey">
+                                <h3 class="portfolio-title">Sân Pickerball Uncle Thái Honey</h3>
+                            </div>
+                        </a>
+                    </div>
+                <div class="portfolio-cta">
+                    <a href="asset/product/product.html" class="btn">Xem thêm dự án</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners">
+            <div class="container">
+                <h2>Partners</h2>
+                <div class="partners-grid">
+                    <div class="partner-logo"><img src="./asset/img/partner/Viettel.png" alt="Viettel"></div>
+                    <div class="partner-logo"><img src="/asset/img/partner/Viettinbank.png" alt="Viettinbank"></div>
+                    <div class="partner-logo"><img src="/asset/img/partner/logo-vinfast-inkythuatso.png" alt="Vinfast"></div>
+                    <div class="partner-logo"><img src="./asset/img/partner/larasa.png" alt="Larasa"></div> <!-- Kích thước ảnh 150x80 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- (ĐÃ THÊM) Phần đếm số liệu thống kê -->
+        <section id="stats">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-6 stat-item">
+                        <h3 class="stat-number" data-target="50">0</h3>
+                        <p class="stat-label">Đối Tác</p>
+                    </div>
+                    <div class="col-md-6 stat-item">
+                        <h3 class="stat-number" data-target="150">0</h3>
+                        <p class="stat-label">Dự Án Hoàn Thành</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta">
+            <div class="container">
+                <h2>BIẾN TẦM NHÌN CỦA BẠN THÀNH HIỆN THỰC!</h2>
+                <p>Bạn đang nghĩ đến một video thương mại, video quảng cáo hoặc chiến dịch sản phẩm? Mọi ý tưởng tuyệt vời đều bắt đầu từ một tầm nhìn rõ ràng.</p>
+                <p>Hãy bắt đầu cuộc trò chuyện bằng cách điền vào biểu mẫu tóm tắt thông tin khách hàng của chúng tôi, giúp chúng tôi thu thập mọi thông tin chi tiết cần thiết để xây dựng báo giá chính xác và kế hoạch sản xuất phù hợp với dự án tiếp theo của bạn!</p>
+                <a href="./asset/contact/contact.html" class="btn">LIÊN HỆ NGAY</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/cicimedia22/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <!-- <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a> -->
+            </div>
+            <p class="footer-bottom">Copyright &copy; 2025 CICI Media. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- (ĐÃ THÊM) Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
